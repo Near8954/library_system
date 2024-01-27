@@ -1,70 +1,83 @@
-cmake_minimum_required(VERSION 3.5)
+#include <bits/stdc++.h>
 
-project(library_system VERSION 0.1 LANGUAGES CXX)
+using namespace std;
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+const long long k = 450;
 
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+struct nd{
+    long long l, r, x, y, ind;
+};
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
-
-set(TS_FILES library_system_ru_RU.ts)
-
-set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        ${TS_FILES}
-)
-
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(library_system
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET library_system APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-
-    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-else()
-    if(ANDROID)
-        add_library(library_system SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(library_system
-            ${PROJECT_SOURCES}
-        )
-    endif()
-
-    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-endif()
-
-target_link_libraries(library_system PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-
-set_target_properties(library_system PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
-)
-
-install(TARGETS library_system
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(library_system)
-endif()
+signed main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    long long n, m;
+    cin >> n;
+    vector<long long> a(n), b(n);
+    for (long long i = 0; i < n; ++i) {
+        cin >> a[i];
+    }
+    for (long long i = 0; i < n; ++i) {
+        cin >> b[i];
+    }
+    cin >> m;
+    vector<long long> res(n, -1), razn2(n + 2);
+    for (long long i = 0; i < n; ++i) {
+        if (a[i] >= b[i]) {
+            res[i] = 0;
+        }
+    }
+    vector<nd> qs;
+    for (long long q = 0; q < m; ++q) {
+        long long ll, rr, x, y;
+        cin >> ll >> rr >> x >> y;
+        --ll, --rr;
+        qs.push_back({ll, rr, x, y, q});
+        if ((q + 1) % k == 0 || q == m - 1) {
+            vector<long long> d(n);
+            for (long long i = 0; i < (long long)qs.size(); ++i) {
+                long long l = qs[i].l + 1, r = qs[i].r + 1, d = qs[i].y;
+                razn2[l] += d;
+                razn2[qs[i].l] += qs[i].x;
+                razn2[qs[i].l + 1] -= qs[i].x;
+                razn2[qs[i].r + 1] -= qs[i].x;
+                razn2[qs[i].r + 2] += qs[i].x;
+                if (r < n) {
+                    razn2[r] -= (r - l + 1) * d;
+                }
+                if (r < n - 1) {
+                    razn2[r + 1] += (r - l) * d;
+                }
+            }
+            d[0] = razn2[0];
+            for (long long i = 1; i < n; ++i) {
+                d[i] = d[i - 1] + razn2[i];
+            }
+            for (long long i = 1; i < n; ++i) {
+                d[i] += d[i - 1];
+            }
+            for (long long i = 0; i < n; ++i) {
+                if (res[i] == -1 && a[i] + d[i] >= b[i]) {
+                    long long add = 0;
+                    for (auto & qq : qs) {
+                        if (qq.l > i || qq.r < i) continue;
+                        long long curadd = qq.x + qq.y * (i - qq.l);
+                        add += curadd;
+                        if (a[i] + add >= b[i]) {
+                            res[i] = qq.ind + 1;
+                            break;
+                        }
+                    }
+                }
+            }
+            for (long long i = 0; i < n; ++i) {
+                a[i] += d[i];
+            }
+            razn2.assign(n + 2, 0);
+            qs.clear();
+        }
+    }
+    for (auto& el : res) {
+        cout << el << " ";
+    }
+}
