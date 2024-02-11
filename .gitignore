@@ -1,3 +1,4 @@
 CMakeLists.txt
 CMakeLists.txt.*
 library_system_sql.pro*
+.vscode
