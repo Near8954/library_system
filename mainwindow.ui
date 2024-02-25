@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1314</width>
+    <width>1337</width>
     <height>705</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>0</y>
       <width>1331</width>
       <height>681</height>
@@ -30,21 +30,11 @@
      <attribute name="title">
       <string>Действия</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>25</x>
-        <y>11</y>
-        <width>1131</width>
-        <height>621</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>1169</x>
-        <y>11</y>
+        <x>1170</x>
+        <y>10</y>
         <width>151</width>
         <height>51</height>
        </rect>
@@ -53,17 +43,14 @@
        <string>PushButton</string>
       </property>
      </widget>
-     <widget class="QScrollBar" name="horizontalScrollBar">
+     <widget class="QTableView" name="tableView">
       <property name="geometry">
        <rect>
-        <x>740</x>
-        <y>340</y>
-        <width>160</width>
-        <height>16</height>
+        <x>10</x>
+        <y>10</y>
+        <width>1151</width>
+        <height>641</height>
        </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </widget>
@@ -71,23 +58,23 @@
      <attribute name="title">
       <string>Люди</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableView" name="tableView_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>10</y>
-        <width>1111</width>
-        <height>611</height>
+        <width>1151</width>
+        <height>641</height>
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>1160</x>
+        <x>1170</x>
         <y>10</y>
-        <width>131</width>
-        <height>71</height>
+        <width>151</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
@@ -99,6 +86,16 @@
      <attribute name="title">
       <string>Книги</string>
      </attribute>
+     <widget class="QTableView" name="tableView_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1151</width>
+        <height>641</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -110,8 +107,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1314</width>
-     <height>36</height>
+     <width>1337</width>
+     <height>19</height>
     </rect>
    </property>
   </widget>
