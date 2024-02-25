@@ -1,13 +1,24 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QString path;
+    #ifdef __APPLE__
+    path = "/Users/ker1l/library_system/main.db";
+    #else
+    path = "./../library_system/main.db";
+    #endif
+
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("./../library_system/main.db");
+    //setStyleSheet(MainWindow->mainwindow{rgb: 55 55 55});
+    db.setDatabaseName(path);
     if (db.open()) {
         qDebug("open");
     } else {

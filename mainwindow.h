@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QSqlTableModel>
+#include <cstdlib>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
