@@ -40,7 +40,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>Добавить действие</string>
       </property>
      </widget>
      <widget class="QTableView" name="tableView">
@@ -78,7 +78,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>Добавить ученика</string>
       </property>
      </widget>
     </widget>
