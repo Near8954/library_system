@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "inputform.h"
 
 
 
@@ -47,6 +48,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    operations->insertRow(operations->rowCount());
+    InputForm form;
+    form.setModal(true);
+    form.exec();
 }
 
