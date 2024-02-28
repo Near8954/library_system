@@ -3,6 +3,9 @@
 #include "inputform.h"
 #include "QComboBox"
 #include "qcombobox.h"
+#include "secondinputform.h"
+#include "iostream"
+using namespace std;
 
 
 
@@ -59,5 +62,24 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
 
+    SecondInputForm form;
+    form.setModal(true);
+    form.exec();
+
+
+
+    // operations = new QSqlTableModel(this, db);
+    // operations->setTable("operations");
+    // operations->select();
+    // students = new QSqlTableModel(this, db);
+    // students->setTable("students");
+    // students->select();
+    // books = new QSqlTableModel(this, db);
+    // books->setTable("books");
+    // books->select();
+    // ui->tableView->setModel(operations);
+    // ui->tableView_2->setModel(students);
+    // ui->tableView_3->setModel(books);
 }
+
 

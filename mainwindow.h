@@ -20,6 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
     void on_pushButton_2_clicked();
 
@@ -32,5 +33,6 @@ private:
     QSqlTableModel *operations;
     QSqlTableModel *students;
     QSqlTableModel *books;
+
 };
 #endif // MAINWINDOW_H
