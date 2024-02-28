@@ -15,14 +15,14 @@ InputForm::InputForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QSortFilterProxyModel proxyModel = new
+    // QSortFilterProxyModel proxyModel = new
 
-    QCompleter *mycompletear = new QCompleter(this);
-    mycompletear->setCaseSensitivity(Qt::CaseInsensitive);
-    //mycompletear->setModel(proxyModel);
-    mycompletear->setCompletionColumn(1);
-    mycompletear->setCompletionMode(QCompleter::UnfilteredPopupCompletion);
-    ui->comboBox->setCompleter(mycompletear);
+    // QCompleter *mycompletear = new QCompleter(this);
+    // mycompletear->setCaseSensitivity(Qt::CaseInsensitive);
+    // //mycompletear->setModel(proxyModel);
+    // mycompletear->setCompletionColumn(1);
+    // mycompletear->setCompletionMode(QCompleter::UnfilteredPopupCompletion);
+    // ui->comboBox->setCompleter(mycompletear);
     //ui->comboBox->setCompleter(InlineCompletion);
     //QComboBox->comboBox->addItems({ "one", "two", "three", "four" });
 }

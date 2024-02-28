@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>435</width>
+    <height>320</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,14 @@
   <property name="styleSheet">
    <string notr="true">QDialog
 {
-background-color: rgb(0, 184, 255)
+background-color: rgb(255, 191, 180)
 }</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
+     <x>40</x>
+     <y>270</y>
      <width>113</width>
      <height>21</height>
     </rect>
@@ -39,38 +39,29 @@ border-radius:5px;
     <string>введите текст</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>80</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>120</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>30</y>
-     <width>103</width>
-     <height>32</height>
+     <x>22</x>
+     <y>11</y>
+     <width>331</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="editable">
     <bool>false</bool>
    </property>
+   <property name="currentText">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Выберите имя</string>
+   </property>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
    <item>
     <property name="text">
      <string>abc</string>
@@ -83,6 +74,11 @@ border-radius:5px;
    </item>
    <item>
     <property name="text">
+     <string>cabc</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>ab</string>
     </property>
    </item>
@@ -91,21 +87,101 @@ border-radius:5px;
      <string>a</string>
     </property>
    </item>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>331</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Выберите фамилию</string>
+   </property>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>abc</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bab</string>
+    </property>
+   </item>
    <item>
     <property name="text">
      <string>cabc</string>
     </property>
    </item>
+   <item>
+    <property name="text">
+     <string>ab</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>a</string>
+    </property>
+   </item>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QComboBox" name="comboBox_3">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>70</y>
-     <width>221</width>
-     <height>181</height>
+     <x>20</x>
+     <y>120</y>
+     <width>331</width>
+     <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {text-color: rgb(0, 0, 0)}</string>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Выберите отчество</string>
+   </property>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>abc</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bab</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>cabc</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ab</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>a</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

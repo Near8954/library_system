@@ -11,15 +11,18 @@ CONFIG += c++17
 SOURCES += \
     inputform.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    secondinputform.cpp
 
 HEADERS += \
     inputform.h \
-    mainwindow.h
+    mainwindow.h \
+    secondinputform.h
 
 FORMS += \
     inputform.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    secondinputform.ui
 
 TRANSLATIONS += \
     library_system_sql_ru_RU.ts
