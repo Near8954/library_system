@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "inputform.h"
+#include "QComboBox"
+#include "qcombobox.h"
 
 
 
