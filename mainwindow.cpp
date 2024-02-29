@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "inputform.h"
+#include "bookinputform.h"
 #include "QComboBox"
 #include "qcombobox.h"
 #include "secondinputform.h"
@@ -90,5 +91,30 @@ void MainWindow::on_pushButton_clicked()
         msgBox.exec();
     }
 
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    BookInputForm form;
+    form.setModal(true);
+    form.exec();
+    books->select();
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("Введите id книги:"), QLineEdit::Normal);
+    if (true) {
+        q->prepare("DELETE FROM books WHERE id = ?");
+        q->addBindValue(text.toInt());
+        q->exec();
+        books->select();
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Некорректный id");
+        msgBox.exec();
+    }
 }
 

@@ -1,5 +1,5 @@
-#ifndef SECONDINPUTFORM_H
-#define SECONDINPUTFORM_H
+#ifndef BOOKINPUTFORM_H
+#define BOOKINPUTFORM_H
 
 #include <QDialog>
 #include <QMainWindow>
@@ -10,26 +10,25 @@
 #include <cstdlib>
 
 namespace Ui {
-class SecondInputForm;
+class BookInputForm;
 }
 
-class SecondInputForm : public QDialog
+class BookInputForm : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit SecondInputForm(QWidget *parent = nullptr);
-    ~SecondInputForm();
+    explicit BookInputForm(QWidget *parent = nullptr);
+    ~BookInputForm();
 
 private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::SecondInputForm *ui;
+    Ui::BookInputForm *ui;
     QSqlDatabase db;
     QSqlQuery *q;
-    QSqlTableModel *students;
-
+    QSqlTableModel *books;
 };
 
-#endif // SECONDINPUTFORM_H
+#endif // BOOKINPUTFORM_H

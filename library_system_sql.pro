@@ -9,17 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bookinputform.cpp \
     inputform.cpp \
     main.cpp \
     mainwindow.cpp \
     secondinputform.cpp
 
 HEADERS += \
+    bookinputform.h \
     inputform.h \
     mainwindow.h \
     secondinputform.h
 
 FORMS += \
+    bookinputform.ui \
     inputform.ui \
     mainwindow.ui \
     secondinputform.ui
