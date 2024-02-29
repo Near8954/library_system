@@ -14,35 +14,30 @@ InputForm::InputForm(QWidget *parent) :
     ui(new Ui::InputForm)
 {
     ui->setupUi(this);
-
+    q = new QSqlQuery(db);
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT last_name, name, middle_name, grade, id FROM students");
-
-    model->setHeaderData(0, Qt::Horizontal, tr("last_name"));
-    model->setHeaderData(1, Qt::Horizontal, tr("name"));
-    model->setHeaderData(2, Qt::Horizontal, tr("middle_name"));
-    model->setHeaderData(3, Qt::Horizontal, tr("grade"));
-    model->setHeaderData(4, Qt::Horizontal, tr("id"));
-    // model->setHeaderData(2, Qt::Horizontal, tr("middle_name"));
-    // model->setHeaderData(3, Qt::Horizontal, tr("id"));
-
+    model->setQuery("SELECT id, last_name, name, middle_name, grade FROM students");
+    model->setHeaderData(0, Qt::Horizontal, tr("id"));
+    model->setHeaderData(1, Qt::Horizontal, tr("last_name"));
+    model->setHeaderData(2, Qt::Horizontal, tr("name"));
+    model->setHeaderData(3, Qt::Horizontal, tr("middle_name"));
+    model->setHeaderData(4, Qt::Horizontal, tr("grade"));
     QTableView *view = new QTableView;
-
-    //QComboBox *cb = new QComboBox();
     ui->comboBox->setModel(model);
-    ui->comboBox->setView(view);
+    ui->comboBox->setView(view); //Переносим данные из studets в combobox
 
-    // QSortFilterProxyModel proxyModel = new
+    QSqlQueryModel *model2 = new QSqlQueryModel;
+    model2->setQuery("SELECT id, author, name, genre, publisher FROM books");
+    model2->setHeaderData(0, Qt::Horizontal, tr("id"));
+    model2->setHeaderData(1, Qt::Horizontal, tr("author"));
+    model2->setHeaderData(2, Qt::Horizontal, tr("name"));
+    model2->setHeaderData(3, Qt::Horizontal, tr("genre"));
+    model2->setHeaderData(4, Qt::Horizontal, tr("publisher"));
+    QTableView *view2 = new QTableView;
+    ui->comboBox_2->setModel(model2);
+    ui->comboBox_2->setView(view2); //Перносим данные из books в combobox
 
-    // QCompleter *mycompletear = new QCompleter(this);
-    // mycompletear->setCaseSensitivity(Qt::CaseInsensitive);
-    // //mycompletear->setModel(proxyModel);
-    // mycompletear->setCompletionColumn(1);
-    // mycompletear->setCompletionMode(QCompleter::UnfilteredPopupCompletion);
-    // ui->comboBox->setCompleter(mycompletear);
-    //ui->comboBox->setCompleter(InlineCompletion);
-    //QComboBox->comboBox->addItems({ "one", "two", "three", "four" });
 }
 
 InputForm::~InputForm()
@@ -66,3 +61,38 @@ void QComboBox::keyPressEvent(QKeyEvent *e)
 {
 
 }
+
+void InputForm::on_pushButton_clicked()
+{
+    QString a = ui->comboBox->currentText();
+    QString b = ui->comboBox_2->currentText();
+    QString c = ui->comboBox_3->currentText();
+    if (c == "Книга возвращена") {
+        q->prepare("INSERT INTO operations (book_id, status, student_id) VALUES (?, ?, ?)");
+        q->addBindValue(a.toInt());
+        q->addBindValue(c);
+        q->addBindValue(b.toInt());
+        int n = q->prepare("SELECT number FROM books WHERE id = ?");
+        q->addBindValue(b.toInt());
+        q->exec();
+        q->prepare("UPDATE books SET number = ? WHERE id = ?");
+        q->addBindValue(n + 1);
+        q->addBindValue(b.toInt());
+        q->exec();
+        close();
+    } else {
+        q->prepare("INSERT INTO operations (book_id, status, student_id) VALUES (?, ?, ?)");
+        q->addBindValue(a.toInt());
+        q->addBindValue(c);
+        q->addBindValue(b.toInt());
+        int n = q->prepare("SELECT number FROM books WHERE id = ?");
+        q->addBindValue(b.toInt());
+        q->exec();
+        q->prepare("UPDATE books SET number = ? WHERE id = ?");
+        q->addBindValue(n - 1);
+        q->addBindValue(b.toInt());
+        q->exec();
+        close();
+    }
+}
+

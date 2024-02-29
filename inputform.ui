@@ -74,32 +74,12 @@ background-color:
    </property>
    <item>
     <property name="text">
-     <string/>
+     <string>Книга взята</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>abc</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>bab</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>cabc</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>ab</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>a</string>
+     <string>Книга возвращена</string>
     </property>
    </item>
   </widget>

@@ -75,6 +75,7 @@ void MainWindow::on_pushButton_2_clicked()
     InputForm form;
     form.setModal(true);
     form.exec();
+    operations->select();
 }
 
 
