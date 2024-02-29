@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
     QString path;
     #ifdef __APPLE__
@@ -26,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
     #else
     path = "./../library_system/main.db";
     #endif
+
+    setStyleSheet("QMainWindow {background-color: rgb(255, 240, 239)}, QTabWidget {text-color: rgb(0, 0, 0)}");
 
     db = QSqlDatabase::addDatabase("QSQLITE");
     //setStyleSheet(MainWindow->mainwindow{rgb: 55 55 55});
@@ -66,12 +69,10 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-
     SecondInputForm form;
     form.setModal(true);
     form.exec();
     students->select();
-
 }
 
 

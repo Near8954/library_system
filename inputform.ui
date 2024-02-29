@@ -16,35 +16,15 @@
   <property name="styleSheet">
    <string notr="true">QDialog
 {
-background-color: rgb(255, 191, 180)
+background-color:
 }</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>270</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit {
-border:none;
-border-bottom:5px solid black;
-border-radius:5px;
-}</string>
-   </property>
-   <property name="placeholderText">
-    <string>введите текст</string>
-   </property>
-  </widget>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>22</x>
-     <y>11</y>
-     <width>331</width>
+     <x>20</x>
+     <y>20</y>
+     <width>401</width>
      <height>51</height>
     </rect>
    </property>
@@ -55,45 +35,15 @@ border-radius:5px;
     <string/>
    </property>
    <property name="placeholderText">
-    <string>Выберите имя</string>
+    <string>Выберите ученика</string>
    </property>
-   <item>
-    <property name="text">
-     <string/>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>abc</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>bab</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>cabc</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>ab</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>a</string>
-    </property>
-   </item>
   </widget>
   <widget class="QComboBox" name="comboBox_2">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>60</y>
-     <width>331</width>
+     <y>70</y>
+     <width>401</width>
      <height>51</height>
     </rect>
    </property>
@@ -101,45 +51,15 @@ border-radius:5px;
     <bool>false</bool>
    </property>
    <property name="placeholderText">
-    <string>Выберите фамилию</string>
+    <string>Выберите книгу</string>
    </property>
-   <item>
-    <property name="text">
-     <string/>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>abc</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>bab</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>cabc</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>ab</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>a</string>
-    </property>
-   </item>
   </widget>
   <widget class="QComboBox" name="comboBox_3">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>120</y>
-     <width>331</width>
+     <width>401</width>
      <height>51</height>
     </rect>
    </property>
@@ -150,7 +70,7 @@ border-radius:5px;
     <bool>false</bool>
    </property>
    <property name="placeholderText">
-    <string>Выберите отчество</string>
+    <string>Выберите действие</string>
    </property>
    <item>
     <property name="text">
@@ -182,6 +102,19 @@ border-radius:5px;
      <string>a</string>
     </property>
    </item>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>180</y>
+     <width>291</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Добавить</string>
+   </property>
   </widget>
  </widget>
  <resources/>

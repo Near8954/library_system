@@ -15,6 +15,20 @@ InputForm::InputForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT name, id FROM students");
+    model->setHeaderData(0, Qt::Horizontal, tr("name"));
+    model->setHeaderData(1, Qt::Horizontal, tr("id"));
+    // model->setHeaderData(2, Qt::Horizontal, tr("middle_name"));
+    // model->setHeaderData(3, Qt::Horizontal, tr("id"));
+
+    //QTableView *view = new QTableView;
+
+    //QComboBox *cb = new QComboBox();
+    ui->comboBox->setModel(model);
+    //cb->setView(view);
+
     // QSortFilterProxyModel proxyModel = new
 
     // QCompleter *mycompletear = new QCompleter(this);

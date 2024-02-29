@@ -23,8 +23,18 @@
       <height>681</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget
+{
+background-color: rgb(255, 240, 239)
+}
+QMainWidget 
+{
+background-color: rgb(255, 240, 239)
+}</string>
+    </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">

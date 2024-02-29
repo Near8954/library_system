@@ -5,6 +5,12 @@
 #include <QCompleter>
 #include "QKeyEvent"
 #include "QComboBox"
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QSqlQuery>
+#include <QSqlTableModel>
+#include <cstdlib>
+
 namespace Ui {
 class InputForm;
 }
@@ -21,6 +27,11 @@ private slots:
 
 private:
     Ui::InputForm *ui;
+    QSqlDatabase db;
+    QSqlQuery *q;
+    QSqlTableModel *operations;
+    QSqlTableModel *students;
+    QSqlTableModel *books;
 
 };
 
