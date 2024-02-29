@@ -31,12 +31,14 @@ void SecondInputForm::on_pushButton_clicked()
     QString name = ui->lineEdit_2->text();
     QString last_name = ui->lineEdit->text();
     QString middle_name = ui->lineEdit_3->text();
+    QString grade = ui->lineEdit_4->text();
 
-    q->prepare("INSERT INTO students (last_name, name, middle_name, grade) VALUES(?, ?, ?, '1');");
+    q->prepare("INSERT INTO students (last_name, name, middle_name, grade) VALUES(?, ?, ?, ?);");
 
     q->addBindValue(name);
     q->addBindValue(last_name);
     q->addBindValue(middle_name);
+    q->addBindValue(grade);
     q->exec();
     close();
 }

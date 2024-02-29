@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1337</width>
-    <height>705</height>
+    <width>1366</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1331</width>
-      <height>681</height>
+      <width>1366</width>
+      <height>768</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -34,7 +34,7 @@ background-color: rgb(255, 240, 239)
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -56,10 +56,10 @@ background-color: rgb(255, 240, 239)
      <widget class="QTableView" name="tableView">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
-        <width>1151</width>
-        <height>641</height>
+        <width>1161</width>
+        <height>661</height>
        </rect>
       </property>
      </widget>
@@ -156,8 +156,8 @@ background-color: rgb(255, 240, 239)
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1337</width>
-     <height>36</height>
+     <width>1366</width>
+     <height>19</height>
     </rect>
    </property>
   </widget>
