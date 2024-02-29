@@ -8,6 +8,7 @@
 #include <QSqlQuery>
 //#include "QSQLite"
 
+using namespace std;
 
 SecondInputForm::SecondInputForm(QWidget *parent)
     : QDialog(parent)
@@ -41,12 +42,21 @@ SecondInputForm::~SecondInputForm()
 }
 
 
+long long id = 5;
+
 void SecondInputForm::on_pushButton_clicked()
 {
-    q->exec("INSERT INTO students VALUES(16, 'a', 'a', 'a', '1');");
-    // QString a = ui->comboBox->currentText();
-    // q->exec("INSERT INTO students(1, 'a', 'a', 'a', '1');");
+    QString name = ui->lineEdit->text();
+    QString last_name = ui->lineEdit_2->text();
+    QString middle_name = ui->lineEdit_3->text();
 
+    q->prepare("INSERT INTO students VALUES(?, ?, ?, ?, '1');");
+    //q->prepare("INSERT INTO ")
+    q->addBindValue(id++);
+    q->addBindValue(name);
+    q->addBindValue(last_name);
+    q->addBindValue(middle_name);
+    q->exec();
     close();
 }
 

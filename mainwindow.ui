@@ -81,14 +81,17 @@
        <string>Добавить ученика</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser">
+     <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>1070</x>
-        <y>220</y>
-        <width>256</width>
-        <height>192</height>
+        <x>1169</x>
+        <y>71</y>
+        <width>151</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>Удалить ученика</string>
       </property>
      </widget>
     </widget>

@@ -5,6 +5,10 @@
 #include "qcombobox.h"
 #include "secondinputform.h"
 #include "iostream"
+#include "QInputDialog"
+#include "QMessageBox"
+#include "QDir"
+
 using namespace std;
 
 
@@ -65,21 +69,26 @@ void MainWindow::on_pushButton_3_clicked()
     SecondInputForm form;
     form.setModal(true);
     form.exec();
+    students->select();
 
-
-
-    // operations = new QSqlTableModel(this, db);
-    // operations->setTable("operations");
-    // operations->select();
-    // students = new QSqlTableModel(this, db);
-    // students->setTable("students");
-    // students->select();
-    // books = new QSqlTableModel(this, db);
-    // books->setTable("books");
-    // books->select();
-    // ui->tableView->setModel(operations);
-    // ui->tableView_2->setModel(students);
-    // ui->tableView_3->setModel(books);
 }
 
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("Введите id ученика:"), QLineEdit::Normal);
+
+    if (true) {
+        q->prepare("DELETE FROM students WHERE id = ?");
+        q->addBindValue(text.toInt());
+        q->exec();
+        students->select();
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Некорректный id");
+        msgBox.exec();
+    }
+
+}
 
