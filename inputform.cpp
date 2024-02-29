@@ -6,7 +6,7 @@
 #include "QIdentityProxyModel"
 #include "QSortFilterProxyModel"
 #include "QSqlQueryModel"
-
+#include "QTableView"
 
 
 InputForm::InputForm(QWidget *parent) :
@@ -17,17 +17,21 @@ InputForm::InputForm(QWidget *parent) :
 
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT name, id FROM students");
-    model->setHeaderData(0, Qt::Horizontal, tr("name"));
-    model->setHeaderData(1, Qt::Horizontal, tr("id"));
+    model->setQuery("SELECT last_name, name, middle_name, grade, id FROM students");
+
+    model->setHeaderData(0, Qt::Horizontal, tr("last_name"));
+    model->setHeaderData(1, Qt::Horizontal, tr("name"));
+    model->setHeaderData(2, Qt::Horizontal, tr("middle_name"));
+    model->setHeaderData(3, Qt::Horizontal, tr("grade"));
+    model->setHeaderData(4, Qt::Horizontal, tr("id"));
     // model->setHeaderData(2, Qt::Horizontal, tr("middle_name"));
     // model->setHeaderData(3, Qt::Horizontal, tr("id"));
 
-    //QTableView *view = new QTableView;
+    QTableView *view = new QTableView;
 
     //QComboBox *cb = new QComboBox();
     ui->comboBox->setModel(model);
-    //cb->setView(view);
+    ui->comboBox->setView(view);
 
     // QSortFilterProxyModel proxyModel = new
 
