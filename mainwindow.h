@@ -35,6 +35,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_delete_operation_clicked();
+
 private:
     Ui::MainWindow *ui;
     void closeEvent(QCloseEvent *event);

@@ -139,3 +139,19 @@ void MainWindow::closeEvent(QCloseEvent *event) {
       event->ignore();
      return;
 }
+
+void MainWindow::on_delete_operation_clicked()
+{
+    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("Введите id действия:"), QLineEdit::Normal);
+    if (true) {
+        q->prepare("DELETE FROM operations WHERE id = ?");
+        q->addBindValue(text.toInt());
+        q->exec();
+        operations->select();
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Некорректный id");
+        msgBox.exec();
+    }
+}
+
