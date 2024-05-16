@@ -7,8 +7,11 @@
 #include <QSqlQuery>
 #include <QSqlTableModel>
 #include <cstdlib>
+#include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
+
+class QCloseEvent;
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
@@ -34,6 +37,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void closeEvent(QCloseEvent *event);
     QSqlDatabase db;
     QSqlQuery *q;
     QSqlTableModel *operations;
@@ -41,4 +45,5 @@ private:
     QSqlTableModel *books;
 
 };
+
 #endif // MAINWINDOW_H

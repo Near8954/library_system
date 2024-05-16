@@ -72,12 +72,12 @@ void InputForm::on_pushButton_clicked()
         q->addBindValue(a.toInt());
         q->addBindValue(c);
         q->addBindValue(b.toInt());
-        int n = q->prepare("SELECT number FROM books WHERE id = ?");
-        q->addBindValue(b.toInt());
-        q->exec();
-        q->prepare("UPDATE books SET number = ? WHERE id = ?");
-        q->addBindValue(n + 1);
-        q->addBindValue(b.toInt());
+//        int n = q->prepare("SELECT number FROM books WHERE id = ?");
+//        q->addBindValue(b.toInt());
+//        q->exec();
+//        q->prepare("UPDATE books SET number = ? WHERE id = ?");
+//        q->addBindValue(n + 1);
+//        q->addBindValue(b.toInt());
         q->exec();
         close();
     } else {
@@ -85,12 +85,12 @@ void InputForm::on_pushButton_clicked()
         q->addBindValue(a.toInt());
         q->addBindValue(c);
         q->addBindValue(b.toInt());
-        int n = q->prepare("SELECT number FROM books WHERE id = ?");
-        q->addBindValue(b.toInt());
-        q->exec();
-        q->prepare("UPDATE books SET number = ? WHERE id = ?");
-        q->addBindValue(n - 1);
-        q->addBindValue(b.toInt());
+//        int n = q->prepare("SELECT number FROM books WHERE id = ?");
+//        q->addBindValue(b.toInt());
+//        q->exec();
+//        q->prepare("UPDATE books SET number = ? WHERE id = ?");
+//        q->addBindValue(n - 1);
+//        q->addBindValue(b.toInt());
         q->exec();
         close();
     }

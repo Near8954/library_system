@@ -98,6 +98,9 @@ background-color: rgb(255, 240, 239)
         <height>641</height>
        </rect>
       </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -112,6 +115,9 @@ background-color: rgb(255, 240, 239)
         <width>1151</width>
         <height>641</height>
        </rect>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_3">
@@ -153,6 +159,9 @@ background-color: rgb(255, 240, 239)
         <width>1151</width>
         <height>641</height>
        </rect>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_4">

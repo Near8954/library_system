@@ -131,3 +131,11 @@ void MainWindow::on_pushButton_5_clicked()
     }
 }
 
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    if (QMessageBox::question(this,tr("Выход из программы"),tr("Сохранить и выйти?"),QMessageBox::Yes | QMessageBox::No)==QMessageBox::Yes)
+      event->accept();
+     else
+      event->ignore();
+     return;
+}

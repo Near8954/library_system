@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>435</width>
-    <height>320</height>
+    <height>413</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,7 +42,7 @@ background-color:
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>70</y>
+     <y>100</y>
      <width>401</width>
      <height>51</height>
     </rect>
@@ -58,7 +58,7 @@ background-color:
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>120</y>
+     <y>180</y>
      <width>401</width>
      <height>51</height>
     </rect>
@@ -86,10 +86,10 @@ background-color:
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>180</y>
-     <width>291</width>
-     <height>111</height>
+     <x>290</x>
+     <y>360</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">

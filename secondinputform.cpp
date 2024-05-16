@@ -29,8 +29,15 @@ SecondInputForm::~SecondInputForm()
 void SecondInputForm::on_pushButton_clicked()
 {
     QString name = ui->lineEdit_2->text();
+    name = name.toLower();
+    QString tmp = name;
+    name[0] = tmp[0].toUpper();
     QString last_name = ui->lineEdit->text();
+    tmp = last_name;
+    last_name[0] = tmp[0].toUpper();
     QString middle_name = ui->lineEdit_3->text();
+    tmp = middle_name;
+    middle_name[0] = tmp[0].toUpper();
     QString grade = ui->lineEdit_4->text();
 
     q->prepare("INSERT INTO students (last_name, name, middle_name, grade) VALUES(?, ?, ?, ?);");
